@@ -1,4 +1,4 @@
-import {SAVE_COMMENT, FETCH_COMMENTS} from './types'
+import {SAVE_COMMENT, FETCH_COMMENTS, AUTH_ACTION} from './types'
 import axios from 'axios'
 export function saveComment(comment){
     return {
@@ -12,5 +12,12 @@ export function fetchComments(){
     return {
         type: FETCH_COMMENTS,
         payload: comments
+    }
+}
+
+export function authLogin(isLoggedIn){
+    return {
+        type:AUTH_ACTION,
+        payload: isLoggedIn
     }
 }
